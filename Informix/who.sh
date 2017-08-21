@@ -1,4 +1,5 @@
 #!/bin/bash
+now=$(date +"%d-%m-%Y.%H:%M:%S")
 echo "
 select  
 	sysdatabases.name database,	-- Database Name
@@ -12,4 +13,4 @@ where
 and     syslocks.rowidlk = sysdatabases.rowid	-- Join rowid to database
 and     syslocks.owner = syssessions.sid	-- Session ID to get user info
 order by 1;
-"| dbaccess sysmaster - 2>&1 | tee who-output.log
+"| dbaccess sysmaster - 2>&1 | tee who-output-$now.log
