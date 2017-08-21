@@ -39,7 +39,8 @@ if [ "$help" ]; then
 fi
 
 if [ -z "$output" ]; then
-	output=exported_schema.sql
+	now=$(date +"%d-%m-%Y")
+	output=exported_schema-$now.sql
 fi
 
 if [ -z "$database" ]; then
