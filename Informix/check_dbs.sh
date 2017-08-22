@@ -14,5 +14,5 @@ WHERE
 	n.dbsname = d.name AND 
 	ti_partnum = n.partnum
 GROUP BY 1
-ORDER BY 1
+ORDER BY 1;
 "| dbaccess sysmaster - 2>&1 | tee check_dbs-output-$now.log
