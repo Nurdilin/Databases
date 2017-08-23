@@ -14,4 +14,4 @@ where
 	d.dbsnum = c.dbsnum
 group by 1
 order by 1;
-"| dbaccess sysmaster - 2>&1 | tee free-output-$now.log
+"| dbaccess sysmaster - 2>&1 | tee check_space-output-$now.log
